@@ -27,8 +27,10 @@ void *mallocx(long size) {
 void bst_initialize(binary_tree_t **t);
 void bst_delete(binary_tree_t **t);
 
-void binary_tree_insert_pre_order(binary_tree_t *t) {
-  if (t->root == NULL) {
+void binary_tree_insert_pre_order(binary_tree_node_t *root, char *topology) {
+  if (root == NULL) {
+    if (topology++ == '(') {
+    }
   }
 }
 
@@ -50,9 +52,9 @@ int main() {
     scanf("%d", &vector[i]);
   }
 
-  bst_initialize(&b);
+  bst_initialize(&t);
 
-  bst_delete(&b); // delete tree
+  bst_delete(&t); // delete tree
   free(topology); // delete topology string
   free(vector);   // delete vector of integers
 
