@@ -27,12 +27,7 @@ void *mallocx(long size) {
 void bst_initialize(binary_tree_t **t);
 void bst_delete(binary_tree_t **t);
 
-void binary_tree_insert_pre_order(binary_tree_node_t *root, char *topology) {
-  if (root == NULL) {
-    if (topology++ == '(') {
-    }
-  }
-}
+binary_tree_node_t *constructor(char topology[], int *idx) {}
 
 size_t bst_size(binary_tree_t *t) { return (t->size); }
 
