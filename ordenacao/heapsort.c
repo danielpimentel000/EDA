@@ -47,6 +47,11 @@ void heap_sort(int *v, size_t size) {
 	}
 }
 
+void print_vetor(int *v, size_t size) {
+	for(size_t i = 0; i < size; i++) {
+		printf("V[%zu] => %d\n", i, v[i]);
+	}
+} 
 
 
 int main() {
@@ -57,7 +62,7 @@ int main() {
   }
 
   heap_sort(v, max);
-  
+  print_vetor(v, max);
 
 return 0;
 }
