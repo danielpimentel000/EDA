@@ -31,13 +31,33 @@ int busca_binaria(int *v, size_t size, int key) {
     mid = (low + hight) / 2;
     if (v[mid] == key) {
       return mid;
-    } else if (v[mid] > key) {
+    } else if (key < v[mid] ) {
       hight = mid - 1;
-    } else if (v[mid] < key) {
+    } else  {
       low = mid + 1;
     }
   }
   return -1;
+}
+int busca_binaria_rec_helper(int *v, int l, int r, int key) {
+  if(l < r) {
+    return -1;
+  }
+  int mid = l + (r - l) / 2;
+  if(key == v[mid]) {
+    return mid;
+  }
+  if(k < v[mid]) {
+    return busca_binaria_rec_helper(v, l, mid - 1, key);
+  } 
+  else {
+    return busca_binaria_rec_helper(v, mid + 1, r, key);
+  }
+  
+}
+
+int busca_binaria_rec(int *v, size_t n, int key) {
+  return busca_binaria_rec_helper(v, 0, n - 1, key);
 }
 
 int main() {
